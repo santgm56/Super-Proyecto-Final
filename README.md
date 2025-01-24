@@ -119,3 +119,116 @@ classDiagram
 5. **Composición**  
    - **Dónde se aplica**: La clase `WebScrapingApp` utiliza instancias de `Scraper` (o sus subclases) y `DataManager`.  
    - **Por qué es importante**: Fomenta la modularidad, ya que permite que los componentes del sistema interactúen entre sí sin estar fuertemente acoplados.  
+
+## 💿 Solución Preliminar
+
+#### **Objetivo General**
+
+Desarrollar un sistema de web scraping basado en la Programación Orientada a Objetos (POO) que permita extraer, procesar y almacenar información de manera eficiente, utilizando Python y sus herramientas tecnológicas especializadas.
+
+---
+
+#### **Arquitectura del Proyecto**
+
+El proyecto estará compuesto por los siguientes módulos principales, diseñados bajo los principios de POO:
+
+1. **Clase Base: `Scraper`**
+
+   - **Responsabilidad**:
+     - Actuar como la clase abstracta base para otros scrapers específicos.
+     - Definir métodos comunes como establecer conexión con páginas web y manejo de errores.
+   - **Atributos**:
+     - `base_url`: URL del sitio objetivo.
+     - `headers`: Cabeceras HTTP para simular navegadores.
+   - **Métodos Abstractos**:
+     - `fetch_data()`: Método abstracto que las subclases implementarán según las necesidades de extracción.
+
+2. **Clase Derivada: `StaticScraper`**
+
+   - **Responsabilidad**:
+     - Extraer información de sitios con contenido estático.
+   - **Librerías Utilizadas**:
+     - `requests`, `BeautifulSoup`.
+   - **Métodos Clave**:
+     - `fetch_data()`: Descarga el contenido HTML y lo parsea con BeautifulSoup.
+     - `parse_data()`: Extrae información específica como tablas, encabezados o enlaces.
+
+3. **Clase Derivada: `DynamicScraper`**
+
+   - **Responsabilidad**:
+     - Manejar sitios con contenido dinámico que requiere interacción, utilizando Selenium.
+   - **Librerías Utilizadas**:
+     - `Selenium`, `webdriver`.
+   - **Métodos Clave**:
+     - `fetch_data()`: Interactúa con el sitio web simulando acciones del usuario.
+     - `parse_data()`: Extrae contenido generado dinámicamente.
+
+4. **Clase para Gestión de Datos: `DataManager`**
+
+   - **Responsabilidad**:
+     - Procesar y almacenar los datos extraídos.
+   - **Atributos**:
+     - `data`: Estructura de datos para mantener la información temporalmente.
+   - **Métodos Clave**:
+     - `save_to_csv()`: Guarda los datos en un archivo CSV.
+     - `save_to_database()`: Almacena los datos en SQLite o cualquier base de datos relacional.
+
+5. **Clase Controladora: `WebScrapingApp`**
+   - **Responsabilidad**:
+     - Coordinar la interacción entre las diferentes clases y gestionar el flujo del programa.
+   - **Métodos Clave**:
+     - `start_scraping()`: Inicia el proceso de scraping según el tipo de sitio web (estático o dinámico).
+     - `display_results()`: Muestra los datos extraídos en consola o interfaz gráfica.
+
+---
+
+#### **Requerimientos Técnicos**
+
+1. **Lenguaje y Herramientas**:
+
+   - **Python**: Lenguaje principal.
+   - **Librerías**:
+     - `requests`, `BeautifulSoup` para scraping estático.
+     - `Selenium` para scraping dinámico.
+     - `Pandas` para procesar y almacenar datos.
+     - `sqlite3` o `SQLAlchemy` para manejo de bases de datos.
+
+2. **Entorno de Desarrollo**:
+
+   - Uso de entornos virtuales (`venv`) para la instalación de dependencias.
+   - Control de versiones con Git.
+
+3. **Formato de Almacenamiento**:
+   - Datos exportados a archivos CSV o almacenados en bases de datos SQLite para análisis posterior.
+
+---
+
+#### **Plan de Implementación**
+
+1. **Fase 1: Diseño**
+
+   - Diagramar la arquitectura del sistema utilizando diagramas UML (clases, relaciones).
+   - Definir los atributos y métodos para cada clase según las necesidades del proyecto.
+
+2. **Fase 2: Desarrollo**
+
+   - Implementar la clase base y las derivadas (`Scraper`, `StaticScraper`, `DynamicScraper`).
+   - Desarrollar el módulo de gestión de datos (`DataManager`).
+   - Implementar la clase controladora (`WebScrapingApp`).
+
+3. **Fase 3: Pruebas**
+
+   - Realizar pruebas unitarias para cada clase.
+   - Ejecutar pruebas funcionales para validar el flujo completo del sistema.
+
+4. **Fase 4: Documentación y Entrega**
+   - Documentar el código utilizando estándares como docstrings.
+   - Crear un manual de usuario y una guía técnica del proyecto.
+
+---
+
+#### **Resultados Esperados**
+
+- Sistema funcional capaz de extraer datos de sitios web estáticos y dinámicos.
+- Almacenamiento organizado de los datos en formatos accesibles.
+- Código modular, reutilizable y escalable, que cumpla con los principios de POO.
