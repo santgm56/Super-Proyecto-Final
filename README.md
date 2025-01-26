@@ -109,8 +109,8 @@ classDiagram
         - url: str
         - request_headers: dict
         + __init__(url: str, request_headers: dict)
-        + get_data(): BeautifulSoup
-        + handle_exception(error: Exception): void
+        + get_data(): None
+        + handle_exception(error: Exception): str
     }
 
     %% Clase derivada: StaticPageExtractor
@@ -132,8 +132,8 @@ classDiagram
     class DataHandler {
         - collected_data: list
         + __init__()
-        + add_extracted_data(extracted_data: list): void
-        + save_to_file(file_name: str): void
+        + add_extracted_data(extracted_data: list): int
+        + save_to_file(file_name: str): str
     }
 
     %% Clase controladora: ScrapingCoordinator
@@ -141,7 +141,7 @@ classDiagram
         - extractor: WebDataExtractor
         - data_handler: DataHandler
         + __init__(extractor: WebDataExtractor, data_handler: DataHandler)
-        + begin_scraping(selector: str): void
+        + begin_scraping(selector: str): bool
     }
 
     %% Relaciones
