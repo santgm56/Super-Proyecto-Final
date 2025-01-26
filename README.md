@@ -1,5 +1,3 @@
-Avance 1 - 15% (Definición de alternativa - Diagramas de clases - Solución preliminar)
-
 # 🌐 Sistema WebScrapping
 
 ## 🗒️ Colaboradores
@@ -10,225 +8,395 @@ Avance 1 - 15% (Definición de alternativa - Diagramas de clases - Solución pre
 └── Manuel Felipe Torres Gamboa
 ```
 
-## 🏆 Introducción
+# 🏆 Introducción
 
-En el contexto actual, donde la cantidad de información disponible en internet crece de manera exponencial, la extracción eficiente de datos relevantes se ha convertido en una necesidad crucial para diversos sectores. El desarrollo de un sistema de web scraping representa una solución tecnológica para obtener, procesar y analizar información de forma automatizada desde sitios web. Por esta razón, como equipo, hemos elegido desarrollar la `alternativa 2`: **_Sistema de WebScrapping_**, este proyecto propone el diseño e implementación de un sistema de web scraping que no solo cumpla con los objetivos de extracción de datos, sino que esté estructurado bajo los principios fundamentales de la Programación Orientada a Objetos (POO).
+El volumen de información que se encuentra disponible en internet crece de manera exponencial, haciendo indispensable el uso de herramientas tecnológicas que permitan extraer y analizar datos relevantes de forma automática y eficiente. Por esta razón, como equipo, hemos elegido desarrollar la `alternativa 2`: **_Sistema de WebScrapping_**, este proyecto consiste en desarrollar e implementar un sistema de web scraping que no solo cumpla con los objetivos de extracción de datos, sino que también esté estructurado bajo los principios fundamentales de la Programación Orientada a Objetos (POO).
 
-La elección de POO como paradigma principal radica en su capacidad para ofrecer una arquitectura modular, reutilizable y escalable, cualidades esenciales en un proyecto de esta naturaleza. Mediante el uso de conceptos como encapsulación, herencia, composición, polimorfismo y abstracción, el sistema garantizará un diseño robusto que permita extender sus funcionalidades de manera eficiente y manejar la complejidad inherente al tratamiento de datos en entornos estáticos y dinámicos.
+Este proyecto, titulado: "Super_Proyecto_Final", tiene como objetivo diseñar un sistema de web scraping estructurado bajo principios de modularidad y escalabilidad. Para ello, se emplearán herramientas como Python junto a librerías especializadas como Requests, BeautifulSoup, Selenium y Pandas. Además, se garantizará un desarrollo robusto mediante buenas prácticas, como el manejo adecuado de excepciones y una organización eficiente del código estructurado bajo el paradigma de Programación Orientada a Objetos (POO).
 
-Este proyecto no solo busca cumplir con los objetivos técnicos del desarrollo de un sistema funcional, sino también destacar el valor pedagógico de aplicar los pilares de POO en un contexto práctico. De esta manera, se contribuye al fortalecimiento de habilidades de diseño y programación, alineándose con los requerimientos académicos y profesionales.
+# ➕ Definición de Alternativa
 
-## ➕ Definición de Alternativa
+La alternativa para este proyecto consiste en el desarrollo de un sistema de web scraping que emplee como pilar principal la Programación Orientada a Objetos (POO). El sistema, como ya se mencionó anteriormente, será desarrollado en Python, un lenguaje ampliamente reconocido por su versatilidad y su extenso ecosistema de librerías diseñadas para la extracción y manipulación de datos desde la web, ademas, se contará con la implementación de un entorno virtual en el cual se instalarán las dependencias necesarias para desarrollar y ejecutar este sistema de web scraping.
 
-La alternativa para este proyecto consiste en el desarrollo de un sistema de web scraping que emplee como pilar principal la Programación Orientada a Objetos (POO). El sistema será desarrollado en Python, un lenguaje ampliamente reconocido por su versatilidad y su extenso ecosistema de librerías diseñadas para la extracción y manipulación de datos desde la web.
-
-### Características principales:
-
-1. **Aplicación de POO**:  
-   El diseño del sistema estará basado en los pilares de POO:
-
-   - **Encapsulación** para proteger y organizar datos.
-   - **Abstracción** para simplificar la interacción con el sistema.
-   - **Herencia** para evitar redundancias y fomentar la reutilización de código.
-   - **Polimorfismo** para permitir extensibilidad y personalización.
-
-2. **Uso de Python y sus librerías especializadas**:
-
-   - **Requests**: Para realizar solicitudes HTTP y acceder al contenido de las páginas web.
-   - **BeautifulSoup** (de la biblioteca bs4): Para parsear HTML y extraer información estructurada.
-   - **Selenium** (si se requiere interacción dinámica): Para manejar sitios web que cargan contenido de forma asíncrona o que requieren simulación de usuarios.
-   - **Pandas**: Para procesar y almacenar los datos extraídos en formatos como CSV o bases de datos.
-
-3. **Requerimientos tecnológicos adicionales**:
-   - **Gestión de dependencias**: Uso de herramientas como `pip` o archivos `requirements.txt` para garantizar la instalación de librerías necesarias.
-   - **Control de versiones**: Implementación de Git para mantener un historial claro del desarrollo y facilitar la colaboración en equipo.
-   - **Entorno de ejecución**: Uso de entornos virtuales (`venv`) para asegurar compatibilidad y aislamiento de dependencias.
-   - **Persistencia de datos**: Almacenamiento de la información extraída en formatos accesibles, como bases de datos SQLite o archivos JSON/CSV.
 
 ### Ventajas de esta alternativa:
 
-- Facilita la organización y escalabilidad del sistema gracias a la implementación de POO.
-- Aprovecha el amplio ecosistema de Python, que incluye librerías maduras y bien documentadas.
-- Brinda flexibilidad para adaptarse a diversas necesidades, como la extracción de datos estáticos o dinámicos.
-- Fomenta la adquisición de habilidades de diseño y codificación estructurada para su aplicación en escenarios reales.
+- Facilita la organización y escalabilidad del sistema gracias a la implementación de Programación Orientada a Objetos (POO).
+- Aprovecha el amplio ecosistema y la versatilidad de Python, que incluye librerías robustas que a su vez estan bien documentadas.
+- Brinda flexibilidad para adaptarse a diversas necesidades, como la extracción de datos estáticos o dinámicos dependiendo el caso.
+- Fomenta la adquisición de habilidades de diseño y codificación para su aplicación en escenarios reales.
 
-## 📈 Diagrama de Clases
+# 🗂️ Requerimientos Técnicos:
+ 
+### 1. **Lenguaje y Librerías**:
 
-```mermaid
+- Python como lenguaje principal.
+
+ ### **Librerías**:
+- **`Requests`** para realizar solicitudes HTTP.
+- **`BeautifulSoup`** para parsear y extraer datos de HTML.
+
+- **`Selenium`** para interactuar con páginas dinámicas.
+- **`Pandas`** para almacenar y procesar datos en estructuras organizadas.
+
+### 2. **Estructura del Código**:
+
+Implementación bajo los principios de la Programación Orientada a Objetos (POO) para garantizar modularidad y escalabilidad.
+
+### **Clases principales**:
+- **`WebDataExtractor`** (base).
+- **`StaticPageExtractor`** y **`DynamicPageExtractor`** (derivadas).
+- **`DataHandler`** para gestionar los datos.
+- **`ScrapingCoordinator`** para coordinar el flujo del sistema.
+
+### 3. **Entorno de Desarrollo**:
+
+- Uso de entornos virtuales para aislamiento de dependencias (venv).
+- Gestión de versiones con Git para colaboración y control del progreso.
+- Archivo **`requirements.txt`** para especificar las dependencias del proyecto.
+
+### 4. **Salida de Datos**:
+
+Soporte para formatos CSV, JSON o almacenamiento en bases de datos SQLite.
+
+### 5. **Otros Requerimientos**:
+Capacidad de manejar excepciones para evitar interrupciones en la ejecución.
+Compatibilidad con sitios web tanto estáticos como dinámicos.
+
+# 🛠️ Configuración del Entorno de Trabajo  
+
+### **1. Clonar el repositorio**:
+Descargar el código fuente con los siguientes comandos:  
+```bash
+git clone https://github.com/santgm56/Super-Proyecto-Final.git 
+cd Super-Proyecto-Final
+```
+### **2. Crear y activar un entorno virtual**:
+El uso de un entorno virtual ayuda a instalar las dependencias del proyecto sin interferir con otras aplicaciones de Python.
+
+**En Windows**:
+```bash
+python -m venv venv  
+.\venv\Scripts\activate 
+```
+
+**En macOS/Linux**:
+```bash
+python -m venv venv  
+source venv/bin/activate  
+```
+
+### **3. Instalar las dependencias**:
+Una vez dentro del entorno virtual, ejecutar:
+
+```bash
+pip install -r requirements.txt 
+```
+
+### **5. Salir del entorno virtual**:
+Al terminar de trabajar o hacer modificaciones, se puede salir del entorno virtual escribiendo:
+```bash
+deativate
+```
+### **Nota adicional**: 
+Si se usa Windows y existe algún problema al activar el entorno virtual, es posible que se necesite habilitar la ejecución de scripts por políticas de resticción en powershell. Para corregirlo, basta con ejecutar estos comandos en el CMD como terminal predeterminada ya que esta no cuenta con dichas condiciones. 
+
+# 📈 Diagrama de Clases
+````mermaid
 classDiagram
-    %% Clase base: Scraper
-    class Scraper {
-        - base_url: str
-        - headers: dict
-        + fetch_data(): abstract
-        + handle_errors(error): void
+    %% Clase base: WebDataExtractor
+    class WebDataExtractor {
+        - url: str
+        - request_headers: dict
+        + __init__(url: str, request_headers: dict)
+        + get_data(): BeautifulSoup
+        + handle_exception(error: Exception): void
     }
 
-    %% Clase derivada: StaticScraper
-    class StaticScraper {
-        + fetch_data(): BeautifulSoup
-        + parse_data(soup, selector): list
+    %% Clase derivada: StaticPageExtractor
+    class StaticPageExtractor {
+        + __init__(url: str, request_headers: dict)
+        + get_data(): BeautifulSoup
+        + extract_data(soup: BeautifulSoup, selector: str): list
     }
 
-    %% Clase derivada: DynamicScraper
-    class DynamicScraper {
-        - driver_path: str
-        + fetch_data(): BeautifulSoup
-        + parse_data(soup, selector): list
+    %% Clase derivada: DynamicPageExtractor
+    class DynamicPageExtractor {
+        - driver_location: str
+        + __init__(url: str, driver_location: str, request_headers: dict)
+        + get_data(): BeautifulSoup
+        + extract_data(soup: BeautifulSoup, selector: str): list
     }
 
-    %% Clase para gestión de datos: DataManager
-    class DataManager {
-        - data: list
-        + add_data(extracted_data): void
-        + save_to_csv(file_name): void
+    %% Clase para gestión de datos: DataHandler
+    class DataHandler {
+        - collected_data: list
+        + __init__()
+        + add_extracted_data(extracted_data: list): void
+        + save_to_file(file_name: str): void
     }
 
-    %% Clase controladora: WebScrapingApp
-    class WebScrapingApp {
-        - scraper: Scraper
-        - data_manager: DataManager
-        + start_scraping(selector): void
+    %% Clase controladora: ScrapingCoordinator
+    class ScrapingCoordinator {
+        - extractor: WebDataExtractor
+        - data_handler: DataHandler
+        + __init__(extractor: WebDataExtractor, data_handler: DataHandler)
+        + begin_scraping(selector: str): void
     }
 
     %% Relaciones
-    Scraper <|-- StaticScraper : herencia
-    Scraper <|-- DynamicScraper : herencia
-    WebScrapingApp o-- Scraper : composición
-    WebScrapingApp o-- DataManager : composición
+    WebDataExtractor <|-- StaticPageExtractor : herencia
+    WebDataExtractor <|-- DynamicPageExtractor : herencia
+    ScrapingCoordinator o-- WebDataExtractor : composición
+    ScrapingCoordinator o-- DataHandler : composición
+````
+## **Implementación de los Pilares de POO**
+### 1. **Abstracción**:
+
+- **Aplicación**: La clase `WebDataExtractor` define métodos abstractos como `get_data()` y `handle_exception()`, lo que permite a las clases derivadas hacer sus propias implementaciones (`StaticPageExtractor` y `DynamicPageExtractor`).
+- **Importancia**: se centra en lo que hace un objeto en lugar de cómo lo hace, proporcionando una interfaz clara y simplificada; ideal para adaptar su implementación en distintas situaciones.
+
+### 2. **Encapsulamiento**:
+
+- **Aplicación**: Los atributos `url`, `request_headers` y `driver_location` son privados (indicados por el guion `-`), lo que significa que no pueden ser accedidos directamente desde fuera de la clase. Por lo tanto, existen métodos públicos (`+`) que proporcionan acceso controlado a estos atributos.
+- **Importancia**: Protege los datos de acceso no autorizado y modificaciones accidentales.
+
+### 3. **Herencia**:
+
+- **Aplicación**: `StaticPageExtractor` y `DynamicPageExtractor` heredan de `WebDataExtractor`, lo que significa que comparten la interfaz definida por `WebDataExtractor` y pueden proporcionar implementaciones específicas de `get_data()` y `extract_data()`.
+- **Importancia**: Promueve la reutilización del código y permite crear una jerarquía de clases, lo que facilita la extensión y el mantenimiento del código.
+
+### 4. **Polimorfismo**:
+
+- **Aplicación**: La clase `ScrapingCoordinator` puede trabajar con cualquier objeto que sea una instancia de `WebDataExtractor` (ya sea `StaticPageExtractor` o `DynamicPageExtractor`), lo que permite que `begin_scraping()` funcione con diferentes tipos de extractores sin cambiar su implementación.
+- **Importancia**: Permite que una función o un método opere sobre objetos de diferentes clases de manera uniforme sin ningún problema, facilitando la extensión del código y la integración de nuevas clases sin modificar el código existente.
+
+# 💿 Solución Preliminar
+
+### **Objetivo General**
+
+Desarrollar un sistema de web scraping basado en la Programación Orientada a Objetos (POO) que permita extraer, procesar y almacenar información de manera eficiente, utilizando Python y sus herramientas especializadas.
+
+---
+## Clases principales
+
+### 1. **Clase WebDataExtractor**:
+- `__init__(url: str, request_headers: dict = None)`:  Constructor que inicializa los atributos url (URL de la página web a scrapear) y request_headers (Encabezados HTTP para la solicitud). 
+- `get_data()`: Método abstracto para obtener los datos de la página web.
+- `handle_exception(error: Exception)`: Método para manejar excepciones.
+
+````python
+#### src/base/web_data_extractor.py
+
+class WebDataExtractor:
+    def __init__(self, url: str, request_headers: dict = None):
+        self._url = url
+        self._request_headers = request_headers if request_headers else {}
+
+    def get_data(self):
+        """
+        Método principal para obtener los datos.
+        Este método debe ser implementado en las clases derivadas.
+        """
+        pass
+
+    def handle_exception(self, error: Exception):
+        """
+        Método para manejar excepciones durante el scraping.
+        """
+        pass
+````
+
+### 2. **Clase StaticPageExtractor**:
+- `__init__(url: str, request_headers: dict = None)`: Constructor que inicializa los atributos url y request_headers llamando al constructor de la clase base.
+- `get_data()`: Implementación específica para obtener datos de una página estática.
+- `extract_data(soup: BeautifulSoup, selector: str)`: Método para extraer los datos obtenidos.
+
+````python 
+#### src/components/static_page_extractor.py
+
+from src.base.web_data_extractor import WebDataExtractor
+from bs4 import BeautifulSoup
+
+class StaticPageExtractor(WebDataExtractor):
+    def __init__(self, url: str, request_headers: dict = None):
+        super().__init__(url, request_headers)
+
+    def get_data(self):
+         """
+         Método para obtener datos de una página estática
+         """
+        pass
+
+    def extract_data(self, soup: BeautifulSoup, selector: str):
+        """
+        Método para extraer los datos usando BeautifulSoup
+        """
+        pass
+````
+
+### 3. **Clase DynamicPageExtractor**:
+- `__init__(url: str, driver_location: str, request_headers: dict = None)`: Constructor que inicializa los atributos url, driver_location (Ruta del controlador del navegador para Selenium) y request_headers llamando al constructor de la clase base. 
+- `get_data()`: Implementación específica para obtener datos de una página dinámica.
+- `extract_data(soup: BeautifulSoup, selector: str)`: Método para parsear los datos obtenidos.
+
+````python 
+#### src/components/dynamic_page_extractor.py
+
+from src.base.web_data_extractor import WebDataExtractor
+from selenium import webdriver
+from bs4 import BeautifulSoup
+
+class DynamicPageExtractor(WebDataExtractor):
+    def __init__(self, url: str, driver_location: str, request_headers: dict = None):
+        super().__init__(url, request_headers)
+        self._driver_location = driver_location
+
+    def get_data(self):
+        """
+        Método para obtener datos de una página dinámica
+        """
+        pass
+
+    def extract_data(self, soup: BeautifulSoup, selector: str):
+        """
+        Método para extraer los datos usando BeautifulSoup
+        """
+        pass
+
+````
+### 4. **Clase DataHandler:**
+- `__init__()`: Constructor que inicializa el atributo collected_data (Datos extraídos) como una lista vacía. 
+- `add_extracted_data(new_data)`: Método para añadir datos a la lista collected_data.
+- `Método para guardar los datos en un archivo.`: Método para guardar los datos en un archivo.
+
+````python 
+#### src/components/data_handler.py
+
+import pandas as pd
+
+class DataHandler:
+    def __init__(self):
+        self._collected_data = []
+
+    def add_extracted_data(self, new_data):
+        """
+        Método para añadir los nuevos datos extraídos al almacenamiento.
+        """
+        pass 
+
+    def save_to_file(self, file_name: str):
+        """
+        Método para guardar los datos extraídos a un archivo.
+        """
+        pass
+````
+
+### 5. **Clase ScrapingCoordinator**:
+- `__init__(extractor: WebDataExtractor, data_handler: DataHandler`: Constructor que inicializa los atributos extractor (Objeto extractor para realizar el scraping.) y data_handler (Objeto manejador de datos para gestionar los datos extraídos). 
+- `begin_scraping(selector: str)`: Método para iniciar el proceso de scraping.
+
+````python 
+#### src/coordinator/scraping_coordinator.py
+
+from src.base.web_data_extractor import WebDataExtractor
+from src.components.data_handler import DataHandler
+
+class ScrapingCoordinator:
+    def __init__(self, extractor: WebDataExtractor, data_handler: DataHandler):
+        self._extractor = extractor
+        self._data_handler = data_handler
+
+    def begin_scraping(self, selector: str):
+        """
+        Método para inicia el proceso de scraping usando el extractor y maneja los datos extraídos.
+        """
+        pass
+````
+
+# ✨ Estructura del proyecto 
+
+```plaintext
+SUPER_PROYECTO_FINAL/
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── setup.py
+├── main.py
+├── src/
+│   ├── _init_.py
+│   ├── base/
+│   │   ├── _init_.py
+│   │   └── web_data_extractor.py     # Clase base WebDataExtractor
+│   ├── components/
+│   │   ├── _init_.py
+│   │   ├── static_page_extractor.py  # Clase derivada StaticPageExtractor
+│   │   ├── dynamic_page_extractor.py # Clase derivada DynamicPageExtractor
+│   │   └── data_handler.py           # Clase DataHandler
+│   ├── coordinator/
+│   │   ├── _init_.py
+│   │   └── scraping_coordinator.py   # Clase ScrapingCoordinator
+│   └── utils/
+│       ├── _init_.py
+│       └── helpers.py                # Funciones auxiliares
+├── tests/
+│   ├── _init_.py
+│   ├── test_static_page_extractor.py  # Pruebas unitarias de StaticPageExtractor
+│   ├── test_dynamic_page_extractor.py # Pruebas unitarias de DynamicPageExtractor
+│   ├── test_web_data_extractor.       # Pruebas unitarias de WebDataExtractor
+│   ├── test_data_handler.py           # Pruebas unitarias de DataHandler
+│   └──test_scraping_coordinator       # Pruebas unitarias de ScrapingCoordinator
+├── logs/
+│      error.log                      # Para errores críticos.
+│      activiti.log                   # Para registrar eventos generales del scraping. 
+└── outputs/
 ```
 
-### **Explicación de los Pilares de POO**
+ A continuación, se describe cada sección de la estructura organiza los componentes del proyecto de scraping web
 
-1. **Herencia**  
-   - **Dónde se aplica**: La clase `Scraper` es la clase base abstracta de la cual derivan `StaticScraper` y `DynamicScraper`.  
-   - **Por qué es importante**: Permite reutilizar código común entre los diferentes tipos de scrapers, reduciendo duplicación y facilitando mantenimiento.  
+### Archivos principales:
+- **`README.md`**: Documento que detalla el propósito del proyecto, su configuración, cómo utilizarlo y demás aspectos importantes del mismo.
+- **`requirements.txt`**: Archivo que lista las dependencias necesarias para ejecutar el proyecto.
+- **`setup.py`**: Archivo para empaquetar e instalar el proyecto como módulo.
+- **`main.py`**: Punto de entrada principal del programa.
+- **`gitinignore`**: Indica archivos y directorios que no deben ser incluidos en el repositorio.
 
-2. **Abstracción**  
-   - **Dónde se aplica**: La clase `Scraper` define el método abstracto `fetch_data`, que las subclases implementan según sus propias necesidades.  
-   - **Por qué es importante**: Oculta los detalles específicos del scraping (estático o dinámico) al usuario del sistema, ofreciendo una interfaz clara.  
+### `src/` - Código Fuente Principal
+El núcleo principal del proyecto está dividido en módulos organizados por funcionalidad:
 
-3. **Polimorfismo**  
-   - **Dónde se aplica**: El método `fetch_data` es implementado de manera distinta en `StaticScraper` y `DynamicScraper`, pero ambas subclases pueden ser usadas de manera intercambiable en el sistema.  
-   - **Por qué es importante**: Permite que el sistema maneje diferentes tipos de scrapers sin necesidad de modificar el código principal de la aplicación.  
+### `base/`
+- **`web_data_extractor.py`**: Clase base `WebDataExtractor`, que contiene funcionalidades generales para la extracción de datos.
 
-4. **Encapsulación**  
-   - **Dónde se aplica**: Atributos como `base_url`, `headers` y `driver_path` son protegidos o privados, asegurando que solo las propias clases o subclases tengan acceso directo a ellos.  
-   - **Por qué es importante**: Mantiene los datos seguros y previene que sean modificados de forma indebida desde fuera de las clases.  
+### `components/`
+- **`static_page_extractor.py`**: Clase derivada `StaticPageExtractor`, diseñada para manejar la extracción de datos en páginas estáticas.
+- **`dynamic_page_extractor.py`**: Clase derivada `DynamicPageExtractor`, diseñada para la extracción de datos en páginas dinámicas con contenido generado por JavaScript.
+- **`data_handler.py`**: Clase `DataHandler` para procesar, limpiar y almacenar los datos extraídos.
 
-5. **Composición**  
-   - **Dónde se aplica**: La clase `WebScrapingApp` utiliza instancias de `Scraper` (o sus subclases) y `DataManager`.  
-   - **Por qué es importante**: Fomenta la modularidad, ya que permite que los componentes del sistema interactúen entre sí sin estar fuertemente acoplados.  
+### `coordinator/`
+- **`scraping_coordinator.py`**: Clase `ScrapingCoordinator` que coordina y administra el flujo del scraping en el proyecto.
 
-## 💿 Solución Preliminar
+### `utils/`
+- **`helpers.py`**: Funciones auxiliares y herramientas de apoyo para el proyecto.
 
-#### **Objetivo General**
+### `tests/` - Pruebas Unitarias
+Contiene las pruebas para validar los componentes principales del proyecto:
+- **`test_static_page_extractor.py`**: Pruebas para `StaticPageExtractor`.
+- **`test_dynamic_page_extractor.py`**: Pruebas para `DynamicPageExtractor`.
+- **`test_web_data_extractor.py`**: Pruebas para `WebDataExtractor`.
+- **`test_data_handler.py`**: Pruebas para `DataHandler`.
+- **`test_scraping_coordinator.py`**: Pruebas para el flujo coordinado de scraping.
 
-Desarrollar un sistema de web scraping basado en la Programación Orientada a Objetos (POO) que permita extraer, procesar y almacenar información de manera eficiente, utilizando Python y sus herramientas tecnológicas especializadas.
+### `logs/` - Registro de Eventos y Errores
+- **`error.log`**: Archivo para registrar errores críticos que ocurran durante la ejecución.
+- **`activity.log`**: Archivo para registrar eventos y actividades generales del scraping.
 
----
-
-#### **Arquitectura del Proyecto**
-
-El proyecto estará compuesto por los siguientes módulos principales, diseñados bajo los principios de POO:
-
-1. **Clase Base: `Scraper`**
-
-   - **Responsabilidad**:
-     - Actuar como la clase abstracta base para otros scrapers específicos.
-     - Definir métodos comunes como establecer conexión con páginas web y manejo de errores.
-   - **Atributos**:
-     - `base_url`: URL del sitio objetivo.
-     - `headers`: Cabeceras HTTP para simular navegadores.
-   - **Métodos Abstractos**:
-     - `fetch_data()`: Método abstracto que las subclases implementarán según las necesidades de extracción.
-
-2. **Clase Derivada: `StaticScraper`**
-
-   - **Responsabilidad**:
-     - Extraer información de sitios con contenido estático.
-   - **Librerías Utilizadas**:
-     - `requests`, `BeautifulSoup`.
-   - **Métodos Clave**:
-     - `fetch_data()`: Descarga el contenido HTML y lo parsea con BeautifulSoup.
-     - `parse_data()`: Extrae información específica como tablas, encabezados o enlaces.
-
-3. **Clase Derivada: `DynamicScraper`**
-
-   - **Responsabilidad**:
-     - Manejar sitios con contenido dinámico que requiere interacción, utilizando Selenium.
-   - **Librerías Utilizadas**:
-     - `Selenium`, `webdriver`.
-   - **Métodos Clave**:
-     - `fetch_data()`: Interactúa con el sitio web simulando acciones del usuario.
-     - `parse_data()`: Extrae contenido generado dinámicamente.
-
-4. **Clase para Gestión de Datos: `DataManager`**
-
-   - **Responsabilidad**:
-     - Procesar y almacenar los datos extraídos.
-   - **Atributos**:
-     - `data`: Estructura de datos para mantener la información temporalmente.
-   - **Métodos Clave**:
-     - `save_to_csv()`: Guarda los datos en un archivo CSV.
-     - `save_to_database()`: Almacena los datos en SQLite o cualquier base de datos relacional.
-
-5. **Clase Controladora: `WebScrapingApp`**
-   - **Responsabilidad**:
-     - Coordinar la interacción entre las diferentes clases y gestionar el flujo del programa.
-   - **Métodos Clave**:
-     - `start_scraping()`: Inicia el proceso de scraping según el tipo de sitio web (estático o dinámico).
-     - `display_results()`: Muestra los datos extraídos en consola o interfaz gráfica.
+### `outputs/` - Resultados Generados
+Carpeta dedicada a almacenar los datos procesados y extraídos en formatos como CSV, JSON, etc.
 
 ---
 
-#### **Requerimientos Técnicos**
+# 💎 **Resultados Esperados**
 
-1. **Lenguaje y Herramientas**:
-
-   - **Python**: Lenguaje principal.
-   - **Librerías**:
-     - `requests`, `BeautifulSoup` para scraping estático.
-     - `Selenium` para scraping dinámico.
-     - `Pandas` para procesar y almacenar datos.
-     - `sqlite3` o `SQLAlchemy` para manejo de bases de datos.
-
-2. **Entorno de Desarrollo**:
-
-   - Uso de entornos virtuales (`venv`) para la instalación de dependencias.
-   - Control de versiones con Git.
-
-3. **Formato de Almacenamiento**:
-   - Datos exportados a archivos CSV o almacenados en bases de datos SQLite para análisis posterior.
-
----
-
-#### **Plan de Implementación**
-
-1. **Fase 1: Diseño**
-
-   - Diagramar la arquitectura del sistema utilizando diagramas UML (clases, relaciones).
-   - Definir los atributos y métodos para cada clase según las necesidades del proyecto.
-
-2. **Fase 2: Desarrollo**
-
-   - Implementar la clase base y las derivadas (`Scraper`, `StaticScraper`, `DynamicScraper`).
-   - Desarrollar el módulo de gestión de datos (`DataManager`).
-   - Implementar la clase controladora (`WebScrapingApp`).
-
-3. **Fase 3: Pruebas**
-
-   - Realizar pruebas unitarias para cada clase.
-   - Ejecutar pruebas funcionales para validar el flujo completo del sistema.
-
-4. **Fase 4: Documentación y Entrega**
-   - Documentar el código utilizando estándares como docstrings.
-   - Crear un manual de usuario y una guía técnica del proyecto.
-
----
-
-#### **Resultados Esperados**
-
-- Sistema funcional capaz de extraer datos de sitios web estáticos y dinámicos.
+- Sistema funcional capaz de extraer datos de sitios web tanto estáticos y como dinámicos.
 - Almacenamiento organizado de los datos en formatos accesibles.
-- Código modular, reutilizable y escalable, que cumpla con los principios de POO.
+- Código modular, reutilizable y escalable, que cumpla con los principios de Programcación Orientada a Objetos (POO).
