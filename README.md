@@ -18,7 +18,6 @@ Este proyecto, titulado: "Super_Proyecto_Final", tiene como objetivo diseñar un
 
 La alternativa para este proyecto consiste en el desarrollo de un sistema de web scraping que emplee como pilar principal la Programación Orientada a Objetos (POO). El sistema, como ya se mencionó anteriormente, será desarrollado en Python, un lenguaje ampliamente reconocido por su versatilidad y su extenso ecosistema de librerías diseñadas para la extracción y manipulación de datos desde la web, ademas, se contará con la implementación de un entorno virtual en el cual se instalarán las dependencias necesarias para desarrollar y ejecutar este sistema de web scraping.
 
-
 ### Ventajas de esta alternativa:
 
 - Facilita la organización y escalabilidad del sistema gracias a la implementación de Programación Orientada a Objetos (POO).
@@ -27,12 +26,13 @@ La alternativa para este proyecto consiste en el desarrollo de un sistema de web
 - Fomenta la adquisición de habilidades de diseño y codificación para su aplicación en escenarios reales.
 
 # 🗂️ Requerimientos Técnicos:
- 
+
 ### 1. **Lenguaje y Librerías**:
 
 - Python como lenguaje principal.
 
- ### **Librerías**:
+### **Librerías**:
+
 - **`Requests`** para realizar solicitudes HTTP.
 - **`BeautifulSoup`** para parsear y extraer datos de HTML.
 
@@ -44,6 +44,7 @@ La alternativa para este proyecto consiste en el desarrollo de un sistema de web
 Implementación bajo los principios de la Programación Orientada a Objetos (POO) para garantizar modularidad y escalabilidad.
 
 ### **Clases principales**:
+
 - **`WebDataExtractor`** (base).
 - **`StaticPageExtractor`** y **`DynamicPageExtractor`** (derivadas).
 - **`DataHandler`** para gestionar los datos.
@@ -60,49 +61,62 @@ Implementación bajo los principios de la Programación Orientada a Objetos (POO
 Soporte para formatos CSV, JSON o almacenamiento en bases de datos SQLite.
 
 ### 5. **Otros Requerimientos**:
+
 Capacidad de manejar excepciones para evitar interrupciones en la ejecución.
 Compatibilidad con sitios web tanto estáticos como dinámicos.
 
-# 🛠️ Configuración del Entorno de Trabajo  
+# 🛠️ Configuración del Entorno de Trabajo
 
 ### **1. Clonar el repositorio**:
-Descargar el código fuente con los siguientes comandos:  
+
+Descargar el código fuente con los siguientes comandos:
+
 ```bash
-git clone https://github.com/santgm56/Super-Proyecto-Final.git 
+git clone https://github.com/santgm56/Super-Proyecto-Final.git
 cd Super-Proyecto-Final
 ```
+
 ### **2. Crear y activar un entorno virtual**:
+
 El uso de un entorno virtual ayuda a instalar las dependencias del proyecto sin interferir con otras aplicaciones de Python.
 
 **En Windows**:
+
 ```bash
-python -m venv venv  
-.\venv\Scripts\activate 
+python -m venv venv
+.\venv\Scripts\activate
 ```
 
 **En macOS/Linux**:
+
 ```bash
-python -m venv venv  
-source venv/bin/activate  
+python -m venv venv
+source venv/bin/activate
 ```
 
 ### **3. Instalar las dependencias**:
+
 Una vez dentro del entorno virtual, ejecutar:
 
 ```bash
-pip install -r requirements.txt 
+pip install -r requirements.txt
 ```
 
 ### **5. Salir del entorno virtual**:
+
 Al terminar de trabajar o hacer modificaciones, se puede salir del entorno virtual escribiendo:
+
 ```bash
 deativate
 ```
-### **Nota adicional**: 
-Si se usa Windows y existe algún problema al activar el entorno virtual, es posible que se necesite habilitar la ejecución de scripts por políticas de resticción en powershell. Para corregirlo, basta con ejecutar estos comandos en el CMD como terminal predeterminada ya que esta no cuenta con dichas condiciones. 
+
+### **Nota adicional**:
+
+Si se usa Windows y existe algún problema al activar el entorno virtual, es posible que se necesite habilitar la ejecución de scripts por políticas de resticción en powershell. Para corregirlo, basta con ejecutar estos comandos en el CMD como terminal predeterminada ya que esta no cuenta con dichas condiciones.
 
 # 📈 Diagrama de Clases
-````mermaid
+
+```mermaid
 classDiagram
     %% Clase base: WebDataExtractor
     class WebDataExtractor {
@@ -149,8 +163,10 @@ classDiagram
     WebDataExtractor <|-- DynamicPageExtractor : herencia
     ScrapingCoordinator o-- WebDataExtractor : composición
     ScrapingCoordinator o-- DataHandler : composición
-````
+```
+
 ## **Implementación de los Pilares de POO**
+
 ### 1. **Abstracción**:
 
 - **Aplicación**: La clase `WebDataExtractor` define métodos abstractos como `get_data()` y `handle_exception()`, lo que permite a las clases derivadas hacer sus propias implementaciones (`StaticPageExtractor` y `DynamicPageExtractor`).
@@ -171,6 +187,11 @@ classDiagram
 - **Aplicación**: La clase `ScrapingCoordinator` puede trabajar con cualquier objeto que sea una instancia de `WebDataExtractor` (ya sea `StaticPageExtractor` o `DynamicPageExtractor`), lo que permite que `begin_scraping()` funcione con diferentes tipos de extractores sin cambiar su implementación.
 - **Importancia**: Permite que una función o un método opere sobre objetos de diferentes clases de manera uniforme sin ningún problema, facilitando la extensión del código y la integración de nuevas clases sin modificar el código existente.
 
+### 5. **Composición**:
+
+- **Aplicación**: La clase `ScrapingCoordinator` usa composición al contener instancias de `WebDataExtractor` y `DataHandler`. Esto significa que en lugar de heredar funcionalidades, `ScrapingCoordinator` delega tareas a estas clases, permitiendo una mayor modularidad.
+- **Importancia**: La composición es preferida sobre la herencia cuando se busca una relación de "tiene un" en lugar de "es un". Esto hace que `ScrapingCoordinator` sea más flexible, ya que puede trabajar con cualquier extractor (`StaticPageExtractor` o `DynamicPageExtractor`) y con una instancia de `DataHandler` sin necesidad de modificar su código interno.
+
 # 💿 Solución Preliminar
 
 ### **Objetivo General**
@@ -178,14 +199,16 @@ classDiagram
 Desarrollar un sistema de web scraping basado en la Programación Orientada a Objetos (POO) que permita extraer, procesar y almacenar información de manera eficiente, utilizando Python y sus herramientas especializadas.
 
 ---
+
 ## Clases principales
 
 ### 1. **Clase WebDataExtractor**:
-- `__init__(url: str, request_headers: dict = None)`:  Constructor que inicializa los atributos url (URL de la página web a scrapear) y request_headers (Encabezados HTTP para la solicitud). 
+
+- `__init__(url: str, request_headers: dict = None)`: Constructor que inicializa los atributos url (URL de la página web a scrapear) y request_headers (Encabezados HTTP para la solicitud).
 - `get_data()`: Método abstracto para obtener los datos de la página web.
 - `handle_exception(error: Exception)`: Método para manejar excepciones.
 
-````python
+```python
 #### src/base/web_data_extractor.py
 
 class WebDataExtractor:
@@ -205,14 +228,15 @@ class WebDataExtractor:
         Método para manejar excepciones durante el scraping.
         """
         pass
-````
+```
 
 ### 2. **Clase StaticPageExtractor**:
+
 - `__init__(url: str, request_headers: dict = None)`: Constructor que inicializa los atributos url y request_headers llamando al constructor de la clase base.
 - `get_data()`: Implementación específica para obtener datos de una página estática.
 - `extract_data(soup: BeautifulSoup, selector: str)`: Método para extraer los datos obtenidos.
 
-````python 
+```python
 #### src/components/static_page_extractor.py
 
 from src.base.web_data_extractor import WebDataExtractor
@@ -233,14 +257,15 @@ class StaticPageExtractor(WebDataExtractor):
         Método para extraer los datos usando BeautifulSoup
         """
         pass
-````
+```
 
 ### 3. **Clase DynamicPageExtractor**:
-- `__init__(url: str, driver_location: str, request_headers: dict = None)`: Constructor que inicializa los atributos url, driver_location (Ruta del controlador del navegador para Selenium) y request_headers llamando al constructor de la clase base. 
+
+- `__init__(url: str, driver_location: str, request_headers: dict = None)`: Constructor que inicializa los atributos url, driver_location (Ruta del controlador del navegador para Selenium) y request_headers llamando al constructor de la clase base.
 - `get_data()`: Implementación específica para obtener datos de una página dinámica.
 - `extract_data(soup: BeautifulSoup, selector: str)`: Método para parsear los datos obtenidos.
 
-````python 
+```python
 #### src/components/dynamic_page_extractor.py
 
 from src.base.web_data_extractor import WebDataExtractor
@@ -264,13 +289,15 @@ class DynamicPageExtractor(WebDataExtractor):
         """
         pass
 
-````
+```
+
 ### 4. **Clase DataHandler:**
-- `__init__()`: Constructor que inicializa el atributo collected_data (Datos extraídos) como una lista vacía. 
+
+- `__init__()`: Constructor que inicializa el atributo collected_data (Datos extraídos) como una lista vacía.
 - `add_extracted_data(new_data)`: Método para añadir datos a la lista collected_data.
 - `Método para guardar los datos en un archivo.`: Método para guardar los datos en un archivo.
 
-````python 
+```python
 #### src/components/data_handler.py
 
 import pandas as pd
@@ -283,20 +310,21 @@ class DataHandler:
         """
         Método para añadir los nuevos datos extraídos al almacenamiento.
         """
-        pass 
+        pass
 
     def save_to_file(self, file_name: str):
         """
         Método para guardar los datos extraídos a un archivo.
         """
         pass
-````
+```
 
 ### 5. **Clase ScrapingCoordinator**:
-- `__init__(extractor: WebDataExtractor, data_handler: DataHandler`: Constructor que inicializa los atributos extractor (Objeto extractor para realizar el scraping.) y data_handler (Objeto manejador de datos para gestionar los datos extraídos). 
+
+- `__init__(extractor: WebDataExtractor, data_handler: DataHandler`: Constructor que inicializa los atributos extractor (Objeto extractor para realizar el scraping.) y data_handler (Objeto manejador de datos para gestionar los datos extraídos).
 - `begin_scraping(selector: str)`: Método para iniciar el proceso de scraping.
 
-````python 
+```python
 #### src/coordinator/scraping_coordinator.py
 
 from src.base.web_data_extractor import WebDataExtractor
@@ -312,9 +340,9 @@ class ScrapingCoordinator:
         Método para inicia el proceso de scraping usando el extractor y maneja los datos extraídos.
         """
         pass
-````
+```
 
-# ✨ Estructura del proyecto 
+# ✨ Estructura del proyecto
 
 ```plaintext
 SUPER_PROYECTO_FINAL/
@@ -348,13 +376,14 @@ SUPER_PROYECTO_FINAL/
 │   └──test_scraping_coordinator       # Pruebas unitarias de ScrapingCoordinator
 ├── logs/
 │      error.log                      # Para errores críticos.
-│      activiti.log                   # Para registrar eventos generales del scraping. 
+│      activiti.log                   # Para registrar eventos generales del scraping.
 └── outputs/
 ```
 
- A continuación, se describe cada sección de la estructura organiza los componentes del proyecto de scraping web
+A continuación, se describe cada sección de la estructura organiza los componentes del proyecto de scraping web
 
 ### Archivos principales:
+
 - **`README.md`**: Documento que detalla el propósito del proyecto, su configuración, cómo utilizarlo y demás aspectos importantes del mismo.
 - **`requirements.txt`**: Archivo que lista las dependencias necesarias para ejecutar el proyecto.
 - **`setup.py`**: Archivo para empaquetar e instalar el proyecto como módulo.
@@ -362,24 +391,31 @@ SUPER_PROYECTO_FINAL/
 - **`gitinignore`**: Indica archivos y directorios que no deben ser incluidos en el repositorio.
 
 ### `src/` - Código Fuente Principal
+
 El núcleo principal del proyecto está dividido en módulos organizados por funcionalidad:
 
 ### `base/`
+
 - **`web_data_extractor.py`**: Clase base `WebDataExtractor`, que contiene funcionalidades generales para la extracción de datos.
 
 ### `components/`
+
 - **`static_page_extractor.py`**: Clase derivada `StaticPageExtractor`, diseñada para manejar la extracción de datos en páginas estáticas.
 - **`dynamic_page_extractor.py`**: Clase derivada `DynamicPageExtractor`, diseñada para la extracción de datos en páginas dinámicas con contenido generado por JavaScript.
 - **`data_handler.py`**: Clase `DataHandler` para procesar, limpiar y almacenar los datos extraídos.
 
 ### `coordinator/`
+
 - **`scraping_coordinator.py`**: Clase `ScrapingCoordinator` que coordina y administra el flujo del scraping en el proyecto.
 
 ### `utils/`
+
 - **`helpers.py`**: Funciones auxiliares y herramientas de apoyo para el proyecto.
 
 ### `tests/` - Pruebas Unitarias
+
 Contiene las pruebas para validar los componentes principales del proyecto:
+
 - **`test_static_page_extractor.py`**: Pruebas para `StaticPageExtractor`.
 - **`test_dynamic_page_extractor.py`**: Pruebas para `DynamicPageExtractor`.
 - **`test_web_data_extractor.py`**: Pruebas para `WebDataExtractor`.
@@ -387,10 +423,12 @@ Contiene las pruebas para validar los componentes principales del proyecto:
 - **`test_scraping_coordinator.py`**: Pruebas para el flujo coordinado de scraping.
 
 ### `logs/` - Registro de Eventos y Errores
+
 - **`error.log`**: Archivo para registrar errores críticos que ocurran durante la ejecución.
 - **`activity.log`**: Archivo para registrar eventos y actividades generales del scraping.
 
 ### `outputs/` - Resultados Generados
+
 Carpeta dedicada a almacenar los datos procesados y extraídos en formatos como CSV, JSON, etc.
 
 ---
