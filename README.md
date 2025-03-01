@@ -25,45 +25,69 @@ La alternativa para este proyecto consiste en el desarrollo de un sistema de web
 - Brinda flexibilidad para adaptarse a diversas necesidades, como la extracción de datos estáticos o dinámicos dependiendo el caso.
 - Fomenta la adquisición de habilidades de diseño y codificación para su aplicación en escenarios reales.
 
-# 🗂️ Requerimientos Técnicos:
+# 🗂️ Requerimientos Técnicos
 
-### 1. **Lenguaje y Librerías**:
+## 1. Lenguaje y Librerías
 
-- Python como lenguaje principal.
+Python será el lenguaje principal de desarrollo debido a su versatilidad y la gran cantidad de herramientas disponibles para la manipulación y extracción de datos web.
 
-### **Librerías**:
+### Librerías Utilizadas
 
-- **`Requests`** para realizar solicitudes HTTP.
-- **`BeautifulSoup`** para parsear y extraer datos de HTML.
+A continuación, se listan las librerías clave utilizadas en este proyecto, junto con una breve descripción de su funcionalidad:
 
-- **`Selenium`** para interactuar con páginas dinámicas.
-- **`Pandas`** para almacenar y procesar datos en estructuras organizadas.
+```
+Flask                # Desarrollo de aplicaciones web y creación de APIs
+SQLAlchemy           # Manejo de bases de datos ORM para facilitar la interacción con datos estructurados
+requests            # Realizar solicitudes HTTP de manera sencilla y eficiente
+beautifulsoup4      # Parsear y extraer datos de estructuras HTML y XML
+selenium            # Automatización e interacción con páginas web dinámicas
+python-dotenv       # Gestión de variables de entorno para mayor seguridad y flexibilidad
+colorama            # Mejorar la visualización de mensajes en la terminal con colores
+```
 
-### 2. **Estructura del Código**:
+## 2. Estructura del Código
 
-Implementación bajo los principios de la Programación Orientada a Objetos (POO) para garantizar modularidad y escalabilidad.
+Para garantizar escalabilidad y facilidad de mantenimiento, el código sigue los principios de **Programación Orientada a Objetos (POO)**. Esto permite la reutilización de componentes y una mejor organización del sistema.
 
-### **Clases principales**:
+### Clases principales
 
-- **`WebDataExtractor`** (base).
-- **`StaticPageExtractor`** y **`DynamicPageExtractor`** (derivadas).
-- **`DataHandler`** para gestionar los datos.
-- **`ScrapingCoordinator`** para coordinar el flujo del sistema.
+El sistema se estructura en varias clases con responsabilidades bien definidas:
 
-### 3. **Entorno de Desarrollo**:
+- **```WebDataExtractor```**: Clase base que define la estructura general del proceso de extracción de datos.
+- **```StaticPageExtractor```**: Extiende `WebDataExtractor` para manejar páginas web estáticas.
+- **```DynamicPageExtractor```**: Extiende `WebDataExtractor` para manejar páginas web dinámicas con `Selenium`.
+- **```DataHandler```**: Responsable del almacenamiento y procesamiento de los datos extraídos.
+- **```ScrapingCoordinator```**: Coordina la ejecución del proceso de scraping y gestiona las diferentes clases.
 
-- Uso de entornos virtuales para aislamiento de dependencias (venv).
-- Gestión de versiones con Git para colaboración y control del progreso.
-- Archivo **`requirements.txt`** para especificar las dependencias del proyecto.
+Cada clase está diseñada para manejar su propia funcionalidad, reduciendo la dependencia entre módulos y facilitando la extensión del código en el futuro.
 
-### 4. **Salida de Datos**:
+## 3. Entorno de Desarrollo
 
-Soporte para formatos CSV, JSON o almacenamiento en bases de datos SQLite.
+Para asegurar una experiencia de desarrollo eficiente y organizada, se establecen las siguientes prácticas:
 
-### 5. **Otros Requerimientos**:
+- **Uso de entornos virtuales (`venv`)**: Permite aislar dependencias y evitar conflictos con otras instalaciones de Python.
+- **Control de versiones con `Git`**: Se emplea `Git` para rastrear cambios en el código, facilitar la colaboración y garantizar la estabilidad del proyecto.
+- **Definición de dependencias en `requirements.txt`**: Se listan todas las librerías requeridas para que el entorno pueda ser replicado fácilmente en diferentes sistemas.
+- **Uso de archivos de configuración (`.env`)**: Permite almacenar credenciales y configuraciones sensibles sin exponerlas en el código fuente.
 
-Capacidad de manejar excepciones para evitar interrupciones en la ejecución.
-Compatibilidad con sitios web tanto estáticos como dinámicos.
+## 4. Salida de Datos
+
+Los datos extraídos pueden ser almacenados en múltiples formatos según las necesidades del proyecto:
+
+- **CSV**: Para manipulación en hojas de cálculo.
+- **JSON**: Para intercambio de datos estructurados.
+- **SQLite**: Para almacenamiento en bases de datos locales y consultas estructuradas.
+
+El sistema está diseñado para adaptarse a diferentes formatos sin modificar la lógica central del scraping.
+
+## 5. Otros Requerimientos y Consideraciones
+
+- **Manejo de excepciones**: Se implementan mecanismos de captura de errores para evitar interrupciones inesperadas en la ejecución del programa.
+- **Compatibilidad con múltiples tipos de sitios web**: El sistema está diseñado para funcionar con páginas estáticas y dinámicas.
+- **Optimización del rendimiento**: Se evalúan estrategias como el uso de `asyncio` y `multithreading` para mejorar la eficiencia en el scraping.
+- **Escalabilidad**: La arquitectura modular permite agregar nuevas fuentes de datos o expandir funcionalidades sin afectar la estructura existente.
+
+Este conjunto de prácticas y herramientas asegura un flujo de trabajo robusto y adaptable a diferentes necesidades del proyecto.
 
 # 🛠️ Configuración del Entorno de Trabajo
 
@@ -245,7 +269,6 @@ Este directorio contiene el núcleo del proyecto, organizado en módulos y subdi
 4. **Escalabilidad**: Nuevos módulos (por ejemplo, extractores para otros sitios) pueden agregarse sin afectar el código existente.  
 5. **Colaboración**: Facilita el trabajo en equipo al separar responsabilidades y proporcionar una estructura clara.  
 6. **Pruebas y Depuración**: Las pruebas automatizadas y los logs mejoran la calidad del código y simplifican la detección de errores.  
-
 
 # 📈 Diagrama de Clases
 
@@ -588,8 +611,6 @@ def get_logger(name: str = None) -> logging.Logger:
 ```
 
 # **Módulo `Helpers`**  
-
-## **Descripción**
 El módulo `Helpers` proporciona funciones auxiliares esenciales para el proyecto, incluyendo validación de URLs, gestión de directorios, limpieza de nombres de archivos, cálculo de estadísticas y generación de hashes.  
 
 ## **Lógica del Código**  
