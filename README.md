@@ -1,4 +1,4 @@
-# 🌐 Sistema WebScrapping
+# 🌐 Sistema WebScrapping ESTO ES SOLO UNA ESTRUCTURA
 
 ## 🗒️ Colaboradores
 
