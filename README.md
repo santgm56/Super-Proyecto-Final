@@ -4,7 +4,7 @@
 
 ```
 ├── Santiago Gamboa Martínez
-├── Samuel Eduardo Fajardo Quintero
+├── Samuel Eduardo Fajardo Quintero soy el lider del proyecto
 └── Manuel Felipe Torres Gamboa
 ```
 
