@@ -1,10 +1,10 @@
-# 🌐 Sistema WebScrapping HOLA gente
+# 🌐 Sistema WebScrapping ESTO ES SOLO UNA ESTRUCTURA
 
 ## 🗒️ Colaboradores
 
 ```
 ├── Santiago Gamboa Martínez
-├── Samuel Eduardo Fajardo Quintero
+├── Samuel Eduardo Fajardo Quintero soy el lider del proyecto
 └── Manuel Felipe Torres Gamboa
 ```
 
